@@ -19,7 +19,19 @@ int main()
   std::cout << result1 << std::endl;
   std::cout << "--------------------------------\n";
 
+  // Task B
+  std::cout << "Task B\n\n";
+  int x = sumRange(1, 3);
+  std::cout << "This is " << x << std::endl;   // 6
+    
+  int y = sumRange(-2, 10);
+  std::cout << "That is " << y << std::endl;   // 52
+  std::cout << "--------------------------------\n";
 
+
+
+
+  
   
   return 0;
 }
