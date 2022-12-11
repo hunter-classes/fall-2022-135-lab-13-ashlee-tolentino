@@ -23,7 +23,6 @@ std::string printRange(int left, int right) {
       return std::to_string(left) + " " + printRange(left + 1, right);
     }
   }
-
   return "";
 }
 
@@ -36,5 +35,17 @@ int sumRange(int left, int right) {
   }
   else {
     return left + sumRange(left + 1, right);
+  }
+}
+
+/**
+   Task C: This function receives an array (as a pointer to its first element) and the size of the array, and should return the sum of its elements. The function itself should not do any dynamic memory allocations.
+*/
+int sumArray(int *arr, int size) {
+  if(size > 0) {
+    return arr[size - 1] + sumArray(arr, size - 1);
+  }
+  else {
+    return 0;
   }
 }
