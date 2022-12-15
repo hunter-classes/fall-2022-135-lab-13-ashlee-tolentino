@@ -9,6 +9,7 @@ This program works with recursion.
 
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "recursion.h"
 
 int main()
@@ -52,9 +53,21 @@ int main()
   delete[] arr;         // deallocate it
   std::cout << "--------------------------------\n";
 
+  // Task D
+  std::cout << "Task D\n\n";
+  std::cout << isAlphanumeric("ABCD") << std::endl;        // true (1)
+  std::cout << isAlphanumeric("Abcd1234xyz") << std::endl; // true (1)
+  std::cout << "--------------------------------\n";
 
-  
-  
+  // Task E
+  std::cout << "Task E\n\n";
+  std::cout << nestedParens("((()))") << std::endl;      // true (1)
+  std::cout << nestedParens("()") << std::endl;          // true (1)
+  std::cout << nestedParens("") << std::endl;            // true (1)
+
+  std::cout << nestedParens("(((") << std::endl;         // false (0)
+  std::cout << nestedParens("(()") << std::endl;         // false (0)
+  std::cout << "--------------------------------\n";
   
   return 0;
 }
