@@ -9,6 +9,7 @@ This program works with recursion.
 
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "recursion.h"
 
 /**
@@ -47,5 +48,41 @@ int sumArray(int *arr, int size) {
   }
   else {
     return 0;
+  }
+}
+
+/**
+   Task D: This function returns true if all characters in the string are letters and digits, otherwise it returns false.
+*/
+bool isAlphanumeric(std::string s) {
+  if(s.empty() == true) {
+    return true;
+  }
+  else if ((isalpha(s[s.length() - 1]) == 0) && (isdigit(s[s.length() - 1]) == 0)) {
+    return false;
+  }
+  else {
+    s = s.substr(0, s.length() - 1);
+    isAlphanumeric(s);
+    return true;
+  }
+  //return true;
+}
+
+/**
+   Task E: This function returns true if the string is a sequence of nested parentheses.
+*/
+int i = 0;
+bool nestedParens(std::string s) {
+  if(s.empty() == true) {
+    return true;
+  }
+  else {
+    if((s.substr(i, 1) == "(") && (s.substr(s.length()-1, 1) == ")")) {
+      return true;
+    }
+    i++;
+    s = s.substr(i, s.length() - 1);
+    nestedParens(s);
   }
 }
